@@ -1,0 +1,35 @@
+Deliverables:
+
+- One node project for the function of the website
+- Including at least one EJS file for the structure of the website
+- Including at least one CSS file for the styling of the website
+
+Features:
+1. Task Creation
+2. Task Viewing
+3. Task Completion
+4. Segmented Lists
+5. Styling
+
+Technical Requirements: 
+1. Node.js & Express.js
+2. EJS
+
+//Create a mockup to figure out what you're building
+//Find assets to use in put into a folder
+//Set up project repo with Node/express/EJS
+//Plan structure of routes and views and static files
+//Set up express and node imports and define routes
+//Implement task creation feature
+	//creating the form on home page
+	//handling the form subnmission
+//Task viewing feature
+	//displaying the list of tasks on the home page
+//Task cross-off feature
+	//Allows the user to check a checkbox and make the tasks appear to be strikes thru
+//implement alternative list to show different set of todo tasks
+//Test application frequently
+//Style the application - includes writing CSS file and linking to EJS template
+	//Writing CSS using bootstrap or flexbox or grid
+//test on different devices - use for responsiveness
+//fix bugs and issues
