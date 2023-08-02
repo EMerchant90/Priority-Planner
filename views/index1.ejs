@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Priority Planner</title>
+    <!-- Add the Bootstrap CSS for styling -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Priority Planner</h1>
+
+        <ul class="list-group">
+            <% tasks.forEach(function(task) { %>
+                <li class="list-group-item"><%= task %></li>
+            <% }); %>
+        </ul>
+
+        <form action="/addtask" method="POST">
+            <div class="form-group">
+                <label for="newtask">New Task</label>
+                <input type="text" class="form-control" id="newtask" name="newtask" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+    </div>
+</body>
+</html>
