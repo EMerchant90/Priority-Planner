@@ -1,12 +1,10 @@
-<%- include('partials/header.ejs') %>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Priority Planner</title>
+  <title>Work Planner</title>
   <style>
     input[type="checkbox"]:checked + label {
         text-decoration: line-through;
@@ -15,9 +13,11 @@
 </head>
 
 <body>
+<%- include('partials/header') %>
+
 <div>
-    <h1>Priority Planner</h1>
-        <form action="/submit" method="post">
+    <h1>Work Planner</h1>
+        <form action="/work" method="post">
             <input name="task" type="text" class="feedback-input" placeholder="Enter Task Here" />
             <input type="submit" value="SUBMIT" />
         </form>        
@@ -31,8 +31,8 @@
     <% }) %>
 </div>
 
+<%- include('partials/footer') %>
+
 </body>
 
 </html>
-
-<%- include('partials/footer.ejs') %>
