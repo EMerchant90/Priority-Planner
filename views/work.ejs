@@ -5,33 +5,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Work Planner</title>
-  <style>
-    input[type="checkbox"]:checked + label {
-        text-decoration: line-through;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-<%- include('partials/header') %>
+<%- include('partials/header.ejs') %>
 
-<div>
-    <h1>Work Planner</h1>
+<main>
+    <div>
+        <h1>Work Planner</h1>
         <form action="/work" method="post">
             <input name="task" type="text" class="feedback-input" placeholder="Enter Task Here" />
             <input type="submit" value="SUBMIT" />
         </form>        
-</div>
-<div>
-    <% task.forEach(function(item, index){ %>
-        <div>
-            <input type="checkbox" id="task-<%= index %>" />
-            <label for="task-<%= index %>"><%= item %></label>
-        </div>
-    <% }) %>
-</div>
+    </div>
+    <div>
+        <% task.forEach(function(item, index){ %>
+            <div class="task-box">
+                <input type="checkbox" id="task-<%= index %>" />
+                <label for="task-<%= index %>"><%= item %></label>
+            </div>
+        <% }) %>
+    </div>
+</main>
 
-<%- include('partials/footer') %>
+<script>
+    $(document).ready(function() {
+        $("input[type='checkbox']").click(function() {
+            var index = $(this).attr("id").split("-")[1];
+            // Send request to server to delete task
+            $.post("/work/delete", {index: index}, function(data) {
+                if (data.deleted) {
+                    location.reload();
+                }
+            });
+        });
+    });
+</script>
+    
+    
+
+<%- include('partials/footer.ejs') %>
 
 </body>
 
