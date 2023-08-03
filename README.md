@@ -1,6 +1,6 @@
 # **Priority Planner**
 
-![Priority Planner Screenshot](images/priorityplanner.png "Priority Planner")
+![Priority Planner Screenshot](public/images/priorityplanner.pngimages "Priority Planner")
 
 **Priority Planner** is a simple, stylish To-Do list web application built using Node.js, Express.js, and EJS. It also incorporates responsive design to ensure usability across a variety of devices.
 
